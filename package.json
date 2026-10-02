@@ -20,7 +20,7 @@
     "m365"
   ],
   "author": "EduTicTac",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.280",
     "@types/node": "^22.10.0",

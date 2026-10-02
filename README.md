@@ -75,5 +75,5 @@ Consulta la guía detallada paso a paso en [INSTALL.md](INSTALL.md).
 
 ## 📄 Licencia
 
-Proyecto de software libre publicado bajo licencia **GPL-3.0-or-later** por la comunidad **EduTicTac**.
+Proyecto de software libre publicado bajo licencia **MIT** por la comunidad **EduTicTac**.
 *Aviso: Este es un proyecto pedagógico independiente de software libre y no es un producto oficial de Microsoft Corporation.*
