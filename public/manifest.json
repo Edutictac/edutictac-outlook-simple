@@ -38,11 +38,5 @@
       "css": ["styles/content.css"],
       "run_at": "document_end"
     }
-  ],
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "outlook-simple@edutictac.es",
-      "strict_min_version": "109.0"
-    }
-  }
+  ]
 }
