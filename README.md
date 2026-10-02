@@ -1,79 +1,95 @@
 # EduTicTac Outlook Simple
 
-> **Capa visual y didáctica para simplificar la interfaz real de Outlook en la web durante sesiones de formación docente.**
+> **Capa visual i didàctica per simplificar la interfície real d'Outlook a la web durant sessions de formació docent.**
 
-`EduTicTac Outlook Simple` es una extensión de navegador (Manifest V3) diseñada específicamente para la formación del profesorado y personal de centros educativos en el uso del correo institucional de Microsoft 365.
+`EduTicTac Outlook Simple` és una extensió de navegador (Manifest V3) dissenyada específicament per a la formació del professorat i personal de centres educatius en l'ús del correu institucional de Microsoft 365.
 
-Su objetivo es reducir drásticamente la sobrecarga visual de Outlook web, destacar los elementos clave de cada lección y acompañar al usuario con explicaciones didácticas contextuales, **sin sustituir Outlook, sin intermediar credenciales y sin acceder a los buzones mediante APIs**.
-
----
-
-## 🎯 ¿Qué hace?
-
-* **Simplifica visualmente la interfaz nativa:** Permite conmutar entre diferentes niveles de complejidad (*Básico*, *Organización*, *Avanzado* y *Original*).
-* **Destaca controles esenciales:** Aplica un halo visual y etiquetas en los botones pertinentes según el tema de la sesión (por ejemplo: botón *Nuevo correo*, *Para*, *CC*, *CCO*, *Adjuntar* o *Búsqueda*).
-* **Ayudas didácticas contextuales:** Muestra tarjetas explicativas claras directamente junto a cada control relevante (por ejemplo, explicando la diferencia crítica entre *CC* y *CCO* para la protección de datos).
-* **Modo presentación (Proyector):** Aumenta el contraste y resalta visualmente los elementos con un pulso llamativo, visible con claridad desde el fondo del aula de formación.
-* **Modo foco:** Permite atenuar el resto de la interfaz para centrar toda la atención en un único componente.
-* **Restauración instantánea:** Permite volver al 100% de la interfaz de Outlook original con un solo clic en cualquier momento.
+El seu objectiu és reduir dràsticament la sobrecàrrega visual d'Outlook web, destacar els elements clau de cada sessió i acompanyar l'alumnat i docents amb explicacions didàctiques contextuals, **sense substituir Outlook, sense intermediar credencials i sense accedir a les bústies mitjançant APIs**.
 
 ---
 
-## 🛡️ ¿Qué NO hace? (Privacidad y Seguridad)
+## 🎯 Què fa?
 
-* ❌ **NO intercepta contraseñas ni credenciales.**
-* ❌ **NO almacena ni lee el contenido de tus correos electrónicos.**
-* ❌ **NO realiza llamadas a Microsoft Graph ni a servidores externos.**
-* ❌ **NO incluye analítica, trackers ni telemetría.**
-* ❌ **NO modifica el funcionamiento del buzón:** el envío, recepción y autenticación los gestiona exclusivamente Microsoft Outlook de forma oficial.
-
----
-
-## 🚀 Niveles de Interfaz
-
-1. **⚪ Outlook Original:** Restaura la interfaz nativa de Microsoft al 100% de inmediato.
-2. **🟢 Básico:** Deja visibles solo los controles imprescindibles para una primera sesión (*Nuevo correo*, *Bandeja de entrada*, *Enviados*, *Borradores*, *Eliminados*, *Búsqueda*, *Lista de mensajes*, *Panel de lectura*, *Responder*, *Reenviar*, *Adjuntar*, *Para*, *CC*, *CCO* y *Enviar*).
-3. **📁 Organización:** Añade la gestión de carpetas, mover, archivar, marcar leído/no leído, banderas de seguimiento, filtros rápidos, categorías de colores, calendario y contactos.
-4. **⚡ Avanzado:** Mantiene toda la interfaz de Outlook visible para trabajar con reglas, firmas y ajustes, manteniendo el sistema de ayudas y resaltado didáctico.
+* **Simplifica visualment la interfície nativa:** Permet commutar entre diferents nivells de complexitat (*Bàsic*, *Organització*, *Avançat* i *Original*).
+* **Destaca controls essencials:** Aplica un halo visual i etiquetes als botons pertinents segons el tema de la sessió (per exemple: botó *Missatge nou*, *Per a*, *CC*, *CCO*, *Adjuntar* o *Cerca*).
+* **Ajudes didàctiques contextuals:** Mostra targetes explicatives clares directament al costat de cada control rellevant (per exemple, explicant la diferència clau entre *CC* i *CCO* per a la protecció de dades).
+* **Mode presentació (Projector):** Augmenta el contrast i ressalta visualment els elements amb un pols cridaner, visible amb claredat des del fons de l'aula de formació.
+* **Barra docent flotant i navegació pas a pas:** Permet avançar de manera guiada (`[◀ Anterior]` i `[Següent ▶]`) pels controls de cada lliçó directament des de la pantalla.
+* **Mode focus:** Permet atenuar la resta de la interfície per centrar tota l'atenció en un únic component.
+* **Restauració instantània:** Permet tornar al 100% de la interfície d'Outlook original amb un sol clic o amb la drecera `Alt + O`.
 
 ---
 
-## 📚 Temas didácticos incluidos
+## 🛡️ Què NO fa? (Privacitat i Seguretat)
 
-1. **Correo básico** (Bandeja y lectura de mensajes)
-2. **Redactar un mensaje** (Nuevo correo y envío)
-3. **Para, CC y CCO** (Diferencias pedagógicas y privacidad de datos)
-4. **Adjuntar archivos** (Documentos y OneDrive)
-5. **Responder a un mensaje**
-6. **Responder a todos**
-7. **Reenviar**
-8. **Buscar mensajes**
-9. **Organizar con carpetas**
-10. **Archivar correos**
-11. **Filtros rápidos** (No leídos, marcados)
-12. **Categorías de colores**
-13. **Reglas automáticas**
-14. **Configuración de firma**
-15. **Calendario escolar**
+* ❌ **NO intercepta contrasenyes ni credencials.**
+* ❌ **NO emmagatzema ni llig el contingut dels teus correus electrònics.**
+* ❌ **NO realitza crides a Microsoft Graph ni a servidors externs.**
+* ❌ **NO inclou analítica, rastrejadors (*trackers*) ni telemetria.**
+* ❌ **NO modifica el funcionament de la bústia:** l'enviament, recepció i autenticació els gestiona exclusivament Microsoft Outlook de manera oficial.
 
 ---
 
-## 🌐 Compatibilidad lingüística
+## 🚀 Nivells d'Interfície
 
-Soporta y detecta automáticamente las interfaces de Outlook en:
+1. **⚪ Outlook Original:** Restaura la interfície nativa de Microsoft al 100% d'immediat.
+2. **🟢 Bàsic:** Deixa visibles només els controls imprescindibles per a una primera sessió (*Missatge nou*, *Safata d'entrada*, *Elements enviats*, *Esborranys*, *Elements suprimits*, *Cerca*, *Llista de missatges*, *Panell de lectura*, *Respondre*, *Reenviar*, *Adjuntar*, *Per a*, *CC*, *CCO* i *Enviar*).
+3. **📁 Organització:** Afig la gestió de carpetes, moure, arxivar, marcar com a llegit/no llegit, marques de seguiment, filtres ràpids, categories de colors, calendari i contactes.
+4. **⚡ Avançat:** Manté tota la interfície d'Outlook visible per treballar amb regles, signatures i ajustos, mantenint el sistema d'ajudes i ressaltat didàctic.
+
+---
+
+## 📚 Temes didàctics inclosos
+
+1. **Correu bàsic** (Safata d'entrada i lectura de missatges)
+2. **Redactar un missatge** (Missatge nou i enviament)
+3. **Per a, CC i CCO** (Diferències pedagògiques i privacitat de dades)
+4. **Adjuntar fitxers** (Documents i OneDrive)
+5. **Respondre a un missatge**
+6. **Respondre a tots**
+7. **Reenviar correu**
+8. **Cercar missatges**
+9. **Organitzar amb carpetas**
+10. **Arxivar correus**
+11. **Filtres ràpids** (No llegits, marcats)
+12. **Categories de colors**
+13. **Regles automàtiques**
+14. **Configuració de signatura**
+15. **Calendari escolar**
+
+---
+
+## ⌨️ Dreceres de teclat per al formador
+
+* `Alt + P`: Activa / desactiva el **Mode Projector** (alta visibilitat).
+* `Alt + O`: **Restaura l'Outlook Original**.
+* `Alt + B`: Commuta al **Mode Bàsic**.
+* `Alt + →` / `Alt + ←`: Avança o retrocedeix al següent pas didàctic del tema actiu.
+* `Escape`: Ix del mode focus.
+
+---
+
+## 🌐 Compatibilitat lingüística
+
+Suporta i detecta automàticament les interfícies d'Outlook en:
 * **Valencià / Català**
-* **Castellano**
+* **Castellà**
 * **English**
 
 ---
 
-## 📦 Instalación
+## 📦 Instal·lació
 
-Consulta la guía detallada paso a paso en [INSTALL.md](INSTALL.md).
+Consulta la guia detallada pas a pas en [INSTALL.md](INSTALL.md).
+
+També pots compilar el paquet zip per a instal·lació directa executant:
+```bash
+npm run package
+```
 
 ---
 
-## 📄 Licencia
+## 📄 Llicència
 
-Proyecto de software libre publicado bajo licencia **MIT** por la comunidad **EduTicTac**.
-*Aviso: Este es un proyecto pedagógico independiente de software libre y no es un producto oficial de Microsoft Corporation.*
+Projecte de programari lliure publicat sota llicència **MIT** per la comunitat **EduTicTac**.
+*Avís: Aquest és un projecte pedagògic independent de programari lliure i no és un producte oficial de Microsoft Corporation.*
