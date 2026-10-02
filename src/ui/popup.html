@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTicTac Outlook Simple</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-row">
+        <div class="icon-circle">✉️</div>
+        <div>
+          <h1 class="title">EduTicTac</h1>
+          <p class="subtitle">Outlook Simple · Formación</p>
+        </div>
+      </div>
+      <div class="lang-select-wrapper">
+        <select id="langSelect" class="lang-select" title="Idioma / Llengua">
+          <option value="auto">🌐 Auto</option>
+          <option value="ca">Valencià</option>
+          <option value="es">Castellano</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <label class="section-label" id="lblMode">Nivel de simplificación</label>
+        <div class="mode-grid">
+          <label class="mode-card" data-mode="basic">
+            <input type="radio" name="mode" value="basic" checked>
+            <div class="card-content">
+              <span class="card-title">🟢 Básico</span>
+              <span class="card-desc">Solo lectura, nuevo correo y envío</span>
+            </div>
+          </label>
+          <label class="mode-card" data-mode="organization">
+            <input type="radio" name="mode" value="organization">
+            <div class="card-content">
+              <span class="card-title">📁 Organización</span>
+              <span class="card-desc">Carpetas, filtros, categorías y archivo</span>
+            </div>
+          </label>
+          <label class="mode-card" data-mode="advanced">
+            <input type="radio" name="mode" value="advanced">
+            <div class="card-content">
+              <span class="card-title">⚡ Avanzado</span>
+              <span class="card-desc">Todo visible con ayudas didácticas</span>
+            </div>
+          </label>
+          <label class="mode-card" data-mode="original">
+            <input type="radio" name="mode" value="original">
+            <div class="card-content">
+              <span class="card-title">⚪ Original</span>
+              <span class="card-desc">Sin modificaciones (Outlook 100% nativo)</span>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <section class="section">
+        <label class="section-label" id="lblAids">Ayudas pedagógicas</label>
+        <div class="toggles">
+          <label class="toggle-row">
+            <input type="checkbox" id="chkHighlight" checked>
+            <span>Destacar botones importantes</span>
+          </label>
+          <label class="toggle-row">
+            <input type="checkbox" id="chkTooltips" checked>
+            <span>Mostrar explicaciones y ayudas</span>
+          </label>
+          <label class="toggle-row highlight-presentation-row">
+            <input type="checkbox" id="chkPresentation">
+            <span>📽️ Modo presentación (proyector)</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="section">
+        <label class="section-label" for="selectTopic" id="lblTopic">Tema de la sesión</label>
+        <select id="selectTopic" class="select-input">
+          <option value="">(Libre / Sin tema específico)</option>
+          <option value="basic-mail" selected>1. Correo básico (Bandeja y lectura)</option>
+          <option value="compose">2. Redactar un mensaje</option>
+          <option value="cc-bcc">3. Para, CC y CCO (Privacidad)</option>
+          <option value="attachments">4. Adjuntar archivos</option>
+          <option value="reply">5. Responder a remitente</option>
+          <option value="reply-all">6. Responder a todos</option>
+          <option value="forward">7. Reenviar correo</option>
+          <option value="search">8. Buscar mensajes</option>
+          <option value="folders">9. Organizar con carpetas</option>
+          <option value="archive">10. Archivar correos</option>
+          <option value="filters">11. Filtros rápidos</option>
+          <option value="categories">12. Categorías de colores</option>
+          <option value="rules">13. Reglas de correo</option>
+          <option value="signature">14. Configurar firma</option>
+          <option value="calendar">15. Calendario</option>
+        </select>
+      </section>
+
+      <div class="actions">
+        <button id="btnApply" class="btn btn-primary">Aplicar cambios</button>
+        <button id="btnRestore" class="btn btn-secondary">↺ Restaurar Outlook original</button>
+      </div>
+
+      <div class="debug-accordion">
+        <button id="btnToggleDebug" class="debug-toggle">⚙️ Diagnóstico de selectores</button>
+        <div id="debugContent" class="debug-content" style="display: none;">
+          <pre id="debugOutput">Cargando diagnóstico...</pre>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>EduTicTac · Software Libre Educativo</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

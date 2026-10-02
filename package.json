@@ -1,0 +1,31 @@
+{
+  "name": "edutictac-outlook-simple",
+  "version": "0.1.0",
+  "description": "Capa visual y didáctica para simplificar Outlook en formación educativa.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "outlook",
+    "education",
+    "edutictac",
+    "accessibility",
+    "chrome-extension",
+    "m365"
+  ],
+  "author": "EduTicTac",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.24.0",
+    "happy-dom": "^20.14.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
