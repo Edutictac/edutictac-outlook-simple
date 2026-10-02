@@ -437,8 +437,16 @@ export const outlookSelectorsV1: Record<OutlookElementKey, SelectorDefinition> =
     },
     strategies: [
       {
-        description: 'Boton o campo CC por aria-label o texto',
-        query: root => queryByAriaLabel(root, ['CC', 'A/c', 'Cc']) || queryByText(root, 'button, span, label', ['CC', 'A/c'])
+        description: 'Boton CC por aria-label exacto',
+        query: root => queryByAriaLabel(root, ['Agregar CC', 'Afegir CC', 'Add Cc', 'CC', 'A/c', 'Cc'])
+      },
+      {
+        description: 'Boton o span por texto CC / A/c',
+        query: root => queryByText(root, 'button, span[role="button"], label', ['CC', 'A/c', 'Cc'])
+      },
+      {
+        description: 'Campo combobox CC expandido',
+        query: root => root.querySelector<HTMLElement>('div[role="combobox"][aria-label*="CC" i], div[role="combobox"][aria-label*="A/c" i], input[aria-label*="CC" i]')
       }
     ]
   },
@@ -458,8 +466,16 @@ export const outlookSelectorsV1: Record<OutlookElementKey, SelectorDefinition> =
     },
     strategies: [
       {
-        description: 'Boton o campo CCO por aria-label o texto',
-        query: root => queryByAriaLabel(root, ['CCO', 'C/o', 'Bcc', 'BCC']) || queryByText(root, 'button, span, label', ['CCO', 'C/o', 'Bcc'])
+        description: 'Boton CCO por aria-label exacto',
+        query: root => queryByAriaLabel(root, ['Agregar CCO', 'Afegir CCO', 'Add Bcc', 'CCO', 'C/o', 'Bcc', 'BCC'])
+      },
+      {
+        description: 'Boton o span por texto CCO / C/o / Bcc',
+        query: root => queryByText(root, 'button, span[role="button"], label', ['CCO', 'C/o', 'Bcc', 'BCC'])
+      },
+      {
+        description: 'Campo combobox CCO expandido',
+        query: root => root.querySelector<HTMLElement>('div[role="combobox"][aria-label*="CCO" i], div[role="combobox"][aria-label*="C/o" i], div[role="combobox"][aria-label*="Bcc" i], input[aria-label*="CCO" i]')
       }
     ]
   },

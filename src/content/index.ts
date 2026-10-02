@@ -1,11 +1,12 @@
 import { ExtensionConfig, SupportedLanguage } from '../types';
-import { loadConfig, saveConfig, subscribeToConfigChanges } from '../storage';
+import { loadConfig, subscribeToConfigChanges } from '../storage';
 import { modeEngine } from '../modes';
 import { highlighter } from '../ui/highlighter';
-import { statusBar } from '../ui/banner';
+import { floatingToolbar } from '../ui/floating-widget';
 import { DIDACTIC_TOPICS } from '../tutorials';
 import { detectLanguage } from '../utils/dom';
 import { selectorRegistry } from '../selectors';
+import { setupKeyboardShortcuts } from '../utils/shortcuts';
 
 class OutlookSimpleApp {
   private config: ExtensionConfig | null = null;
@@ -21,6 +22,9 @@ class OutlookSimpleApp {
       mode: this.config.mode,
       lang: this.lang
     });
+
+    // Setup global keyboard shortcuts for presenters (Alt+P, Alt+O, Alt+B, Alt+Arrows)
+    setupKeyboardShortcuts();
 
     this.applyAll();
 
@@ -73,12 +77,29 @@ class OutlookSimpleApp {
     // 4. Highlight topic or controls if enabled
     if (this.config.activeTopic && DIDACTIC_TOPICS[this.config.activeTopic]) {
       const topic = DIDACTIC_TOPICS[this.config.activeTopic];
-      for (const step of topic.steps) {
-        highlighter.highlight(step.elementKey, {
-          label: step.title[this.lang] || step.title.es,
-          tooltipText: this.config.showTooltips ? (step.description[this.lang] || step.description.es) : undefined,
+      const stepIdx = Math.min(Math.max(0, this.config.activeStepIndex || 0), topic.steps.length - 1);
+      const activeStep = topic.steps[stepIdx];
+
+      // Highlight active step prominently with card
+      if (activeStep) {
+        highlighter.highlight(activeStep.elementKey, {
+          label: `${stepIdx + 1}. ${activeStep.title[this.lang] || activeStep.title.es}`,
+          tooltipText: this.config.showTooltips ? (activeStep.description[this.lang] || activeStep.description.es) : undefined,
           isPresentation: this.config.presentationMode,
           lang: this.lang
+        });
+      }
+
+      // Highlight other steps in topic lightly if enabled
+      if (this.config.highlightControls) {
+        topic.steps.forEach((step, idx) => {
+          if (idx !== stepIdx) {
+            highlighter.highlight(step.elementKey, {
+              label: `${idx + 1}. ${step.title[this.lang] || step.title.es}`,
+              isPresentation: false,
+              lang: this.lang
+            });
+          }
         });
       }
     } else if (this.config.highlightControls) {
@@ -92,16 +113,16 @@ class OutlookSimpleApp {
       }
     }
 
-    // 5. Floating bottom status bar with instant restore
-    statusBar.show(this.config.mode, this.lang, () => {
-      saveConfig({ mode: 'original', activeTopic: null });
-    });
+    // 5. Floating interactive teacher toolbar
+    floatingToolbar.render(this.config, this.lang);
   }
 
   public restore(): void {
     modeEngine.restoreOriginal();
     highlighter.removeAll();
-    statusBar.remove();
+    if (this.config) {
+      floatingToolbar.render(this.config, this.lang);
+    }
     document.body.classList.remove('edutictac-os-presentation');
   }
 

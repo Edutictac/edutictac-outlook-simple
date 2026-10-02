@@ -78,4 +78,17 @@ describe('Selectors and DOM Utils', () => {
     expect(labelCa).toBe('Missatge nou');
     expect(labelEn).toBe('New mail');
   });
+
+  it('locates CC and BCC trigger buttons and expanded comboboxes', () => {
+    const ccBtn = document.createElement('button');
+    ccBtn.setAttribute('aria-label', 'Agregar CC');
+    document.body.appendChild(ccBtn);
+
+    const bccBtn = document.createElement('button');
+    bccBtn.setAttribute('aria-label', 'Agregar CCO');
+    document.body.appendChild(bccBtn);
+
+    expect(findOutlookElement('recipientCc', document)).toBe(ccBtn);
+    expect(findOutlookElement('recipientBcc', document)).toBe(bccBtn);
+  });
 });

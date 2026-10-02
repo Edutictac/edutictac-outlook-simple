@@ -22,55 +22,6 @@ body.edutictac-os-active {
   transition: all 0.2s ease-in-out;
 }
 
-/* Floating Didactic Banner at bottom/top */
-.edutictac-os-status-bar {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 999999;
-  background: #0f172a;
-  color: #f8fafc;
-  padding: 8px 14px;
-  border-radius: 9999px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  user-select: none;
-  animation: edutictac-os-fadein 0.3s ease-out;
-}
-
-.edutictac-os-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #10b981;
-}
-
-.edutictac-os-status-mode {
-  font-weight: 600;
-  color: #38bdf8;
-}
-
-.edutictac-os-btn-restore {
-  background: #334155;
-  color: #f1f5f9;
-  border: none;
-  padding: 3px 9px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.edutictac-os-btn-restore:hover {
-  background: #475569;
-}
-
 /* Safe element hiding */
 .edutictac-os-hidden {
   display: none !important;
@@ -128,9 +79,9 @@ body.edutictac-os-presentation .edutictac-os-highlight,
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 11px;
   font-weight: 700;
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: 9999px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   pointer-events: none;
   z-index: 200;
   white-space: nowrap;
@@ -154,8 +105,8 @@ body.edutictac-os-presentation .edutictac-os-badge {
   border-left: 4px solid var(--edutictac-primary);
   border-radius: 8px;
   padding: 10px 14px;
-  max-width: 280px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  max-width: 290px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.18), 0 8px 10px -6px rgba(0, 0, 0, 0.12);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 13px;
   line-height: 1.4;
@@ -218,8 +169,300 @@ body.edutictac-os-presentation .edutictac-os-badge {
   gap: 6px;
 }
 
-.edutictac-os-focus-exit-btn:hover {
+/* ==========================================================================
+   Floating Teacher Toolbar & Activator
+   ========================================================================== */
+
+.edutictac-os-mini-activator {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999999;
+  background: #0f172a;
+  color: #38bdf8;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.edutictac-os-mini-activator:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
+.edutictac-os-toolbar {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999999;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.edutictac-os-toolbar-pill {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.edutictac-os-toolbar-pill:hover {
+  background: #1e293b;
+}
+
+.edutictac-os-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.edutictac-os-pill-label {
+  color: #f1f5f9;
+}
+
+.edutictac-os-pill-label strong {
+  color: #38bdf8;
+}
+
+.edutictac-os-pill-step {
+  margin-left: 6px;
+  font-size: 11px;
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.edutictac-os-pill-btn {
+  background: #334155;
+  color: #f8fafc;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edutictac-os-pill-btn:hover {
+  background: #475569;
+}
+
+.edutictac-os-btn-restore {
+  background: #475569;
+  color: #f1f5f9;
+  border: none;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.edutictac-os-btn-restore:hover {
+  background: #dc2626;
+  color: white;
+}
+
+/* Expanded Card Panel */
+.edutictac-os-panel-card {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px 16px;
+  width: 330px;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: edutictac-os-fadein 0.2s ease-out;
+}
+
+.edutictac-os-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+.edutictac-os-panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0284c7;
+}
+
+.edutictac-os-panel-close {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.edutictac-os-panel-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.edutictac-os-panel-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edutictac-os-panel-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.04em;
+}
+
+.edutictac-os-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.edutictac-os-mode-btn {
   background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+}
+
+.edutictac-os-mode-btn:hover {
+  background: #f1f5f9;
+}
+
+.edutictac-os-mode-btn.active {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0369a1;
+}
+
+.edutictac-os-tool-btn {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.edutictac-os-tool-btn:hover {
+  background: #fef3c7;
+}
+
+.edutictac-os-tool-btn.active-presentation {
+  background: #f59e0b;
+  color: #ffffff;
+  border-color: #d97706;
+}
+
+.edutictac-os-panel-select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 12px;
+  background: white;
+  outline: none;
+  color: #0f172a;
+}
+
+.edutictac-os-step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-top: 6px;
+}
+
+.edutictac-os-step-btn {
+  background: #0284c7;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edutictac-os-step-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.edutictac-os-step-info {
+  font-size: 11px;
+  color: #334155;
+  text-align: center;
+  flex: 1;
+}
+
+.edutictac-os-panel-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edutictac-os-shortcut-hint {
+  font-size: 10px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.edutictac-os-btn-restore-full {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.edutictac-os-btn-restore-full:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
 }
 
 @keyframes edutictac-os-fadein {

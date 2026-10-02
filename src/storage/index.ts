@@ -7,6 +7,7 @@ export const DEFAULT_CONFIG: ExtensionConfig = {
   showTooltips: true,
   presentationMode: false,
   activeTopic: 'basic-mail',
+  activeStepIndex: 0,
   focusTarget: null,
   debugMode: false,
   language: 'auto'

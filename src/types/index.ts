@@ -26,6 +26,7 @@ export interface ExtensionConfig {
   showTooltips: boolean;
   presentationMode: boolean;
   activeTopic: TutorialTopicId | null;
+  activeStepIndex: number;
   focusTarget: string | null;
   debugMode: boolean;
   language: 'auto' | SupportedLanguage;
