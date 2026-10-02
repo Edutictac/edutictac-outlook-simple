@@ -1,5 +1,6 @@
 import { OutlookElementKey, SimplificationMode } from '../types';
 import { findOutlookElement } from '../selectors';
+import { findNonEssentialToolbarControls, findSecondaryControls } from './visibility';
 
 export interface ModeRules {
   mode: SimplificationMode;
@@ -144,6 +145,18 @@ export class ModeEngine {
           this.modifiedElements.add(el);
         }
       }
+    }
+
+    // Broader but conservative simplification: hide individually labelled
+    // secondary commands, never whole Outlook regions or unknown controls.
+    for (const element of findSecondaryControls(mode)) {
+      element.classList.add('edutictac-os-hidden');
+      this.modifiedElements.add(element);
+    }
+
+    for (const element of findNonEssentialToolbarControls(mode)) {
+      element.classList.add('edutictac-os-hidden');
+      this.modifiedElements.add(element);
     }
   }
 
